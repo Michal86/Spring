@@ -47,6 +47,6 @@ public class CricketCoach implements Coach{
 
     @Override
     public String getPaymentInfo() {
-        return "Pay day! -> "+ paymentService.getPayment();
+        return "Status -> "+ paymentService.getPayment();
     }
 }

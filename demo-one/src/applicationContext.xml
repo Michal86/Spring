@@ -7,6 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- load the properties file: sport.properties -->
+    <context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
 
     <!-- define the dependency -->
@@ -20,12 +22,19 @@
         <constructor-arg ref="myPaymentService"/>
     </bean>
 
+    <!-- ########## -->
+    <bean id="myRandomPaymentService"
+          class="spring.learn1.RandomPaymentService">
+    </bean>
+
     <bean id="myCricketCoach"
           class="spring.learn1.CricketCoach">
         <!-- set up setter injection -->
-        <property name="paymentService" ref="myPaymentService" />
-        <property name="emailAddress" value="radzewicz.michal@gmail.com" />
-        <property name="team" value="Java" />
+        <property name="paymentService" ref="myRandomPaymentService" />
+
+        <!-- inject config file values -->
+        <property name="emailAddress"   value="${foo.email}" />
+        <property name="team"           value="${foo.team}" />
 
     </bean>
 
