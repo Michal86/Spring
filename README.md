@@ -16,7 +16,7 @@
  2. Annotations Injection Types
  	* Constructor
 	* Setter
-	* Field
+	* Field (Inject depend. by setting field values on my class directly - by using Java Reflection)
  
 ---
 
