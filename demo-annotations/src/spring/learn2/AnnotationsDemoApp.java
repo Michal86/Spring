@@ -25,10 +25,13 @@ public class AnnotationsDemoApp {
         System.out.println("=== C# Coach ===");
         System.out.println(sharpCoach.getDailyWorkout());
         System.out.println(sharpCoach.getServiceHelp());
+        System.out.println(sharpCoach.getBatch());
 
         System.out.println("=== Crazy Coach ===");
         System.out.println(crazyCoach.getDailyWorkout());
         System.out.println(crazyCoach.getServiceHelp());
+        System.out.println(crazyCoach.getEmail());
+        System.out.println(crazyCoach.getTeam());
 
         // close the context
         context.close();

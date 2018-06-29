@@ -1,6 +1,7 @@
 package spring.learn2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /*
@@ -15,7 +16,8 @@ public class TennisCoach implements Coach{
     private HelperService helperService;
 
     @Autowired  // Injection - Spring will find a bean that implements HelperService
-    public TennisCoach(HelperService helperService){
+    public TennisCoach(@Qualifier("randomService") HelperService helperService){
+        System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
         this.helperService = helperService;
     }
 
@@ -27,5 +29,20 @@ public class TennisCoach implements Coach{
     @Override
     public String getServiceHelp() {
         return helperService.getHelp();
+    }
+
+    @Override
+    public String getEmail() {
+        return null;
+    }
+
+    @Override
+    public String getTeam() {
+        return null;
+    }
+
+    @Override
+    public String getBatch() {
+        return null;
     }
 }
