@@ -9,6 +9,11 @@
  2. Dependency Injection
 	* Constructor injecton
 	* Setter Injection
+	* Scopes and Lifecycle (with init and destroy methods)
 
+### **demo-annotations**
+ 1. Default Component Names
+ 
+ 
 ---
 
