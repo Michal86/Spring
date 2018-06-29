@@ -16,7 +16,7 @@
 
     <bean id="myCoach"
         class="spring.learn1.TrackCoach"
-        scope="prototype">
+        >
 
         <!-- set up constructor injection -->
         <constructor-arg ref="myPaymentService"/>
