@@ -11,10 +11,16 @@ public class AnnotationsDemoApp {
 
         // get the bean from spring container
         Coach myCoach = context.getBean("tennisCoach", Coach.class);
+        Coach sharpCoach = context.getBean("sharpCoach", Coach.class);
 
         //call a method on the bean
-        System.out.println("=== Test component annotation ===");
+        System.out.println("=== Tennis Coach ===");
         System.out.println(myCoach.getDailyWorkout());
+        System.out.println(myCoach.getServiceHelp());
+
+        System.out.println("=== C# Coach ===");
+        System.out.println(sharpCoach.getDailyWorkout());
+        System.out.println(sharpCoach.getServiceHelp());
 
         // close the context
         context.close();
