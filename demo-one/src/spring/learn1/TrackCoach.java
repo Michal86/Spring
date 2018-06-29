@@ -24,4 +24,14 @@ public class TrackCoach implements Coach {
     public String getPaymentInfo() {
         return "Pay day! -> "+ paymentService.getPayment();
     }
+
+    // add an init method
+    public void doMyStartupStuff(){
+        System.out.println("TrackCoach: inside method doMyStartupStuff");
+    }
+
+    // add a destroy method
+    public void doMyDestroyMethod(){
+        System.out.println("TrackCoach: inside method doMyDestroyMethod");
+    }
 }
