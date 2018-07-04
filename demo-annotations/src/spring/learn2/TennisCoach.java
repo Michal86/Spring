@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /*
 As of Spring Framework 4.3, an @Autowired annotation on such a constructor is no longer necessary
 if the target bean only defines one constructor to begin with.
@@ -19,6 +22,18 @@ public class TennisCoach implements Coach{
     public TennisCoach(@Qualifier("randomService") HelperService helperService){
         System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
         this.helperService = helperService;
+    }
+
+    // define my init method
+    @PostConstruct
+    public void doMyInitStuff(){
+        System.out.println(">> TennisCoach: inside of init method()");
+    }
+
+    // define my destroy method
+    @PreDestroy
+    public void doMyDestroyStuff(){
+        System.out.println(">> TennisCoach: inside destroy method");
     }
 
     @Override

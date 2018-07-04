@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class CrazyCoach implements Coach{
 
     @Autowired  // Field Injection - directly to the field, even if it's private, no need setter method
-    @Qualifier("databaseService")
+    @Qualifier("fileHelperService")
     private HelperService helperService;
 
     @Value("${foo.email}")
